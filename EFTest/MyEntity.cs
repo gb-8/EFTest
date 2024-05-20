@@ -8,16 +8,19 @@ namespace EFTest
 {
     public class MyEntity
     {
-        public static MyEntity Create() => new(Guid.NewGuid());
+        private string name;
 
-        private MyEntity(Guid id)
+        private MyEntity(Guid id, string name)
         {
             Id = id;
+            this.name = name;
         }
 
         public Guid Id { get; private set; }
 
+        public static MyEntity Create() => new(Guid.NewGuid(), Guid.NewGuid().ToString());
+
         public override string ToString() =>
-            $"{nameof(MyEntity)}({nameof(Id)} = {Id})";
+            $"{nameof(MyEntity)}({nameof(Id)} = {Id}, {nameof(name)} = {name})";
     }
 }
