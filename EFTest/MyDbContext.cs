@@ -10,5 +10,9 @@ namespace EFTest
     public class MyDbContext : DbContext
     {
         public DbSet<MyEntity> Entities { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options) =>
+            options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Initial Catalog=EFTest;Integrated Security=true;");
+
     }
 }
