@@ -24,7 +24,7 @@ namespace EFTest.Migrations
 
             modelBuilder.Entity("EFTest.MyEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -32,7 +32,7 @@ namespace EFTest.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("Entities");
                 });

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFTest.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240520130542_AddName")]
-    partial class AddName
+    [Migration("20240521103630_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,7 +27,7 @@ namespace EFTest.Migrations
 
             modelBuilder.Entity("EFTest.MyEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -35,7 +35,7 @@ namespace EFTest.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("Entities");
                 });

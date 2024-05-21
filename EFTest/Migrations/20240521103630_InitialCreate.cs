@@ -15,11 +15,12 @@ namespace EFTest.Migrations
                 name: "Entities",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Entities", x => x.Id);
+                    table.PrimaryKey("PK_Entities", x => x.id);
                 });
         }
 
